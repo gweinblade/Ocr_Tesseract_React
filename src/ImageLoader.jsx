@@ -12,7 +12,7 @@ const ImageLoader = ({selectedImage,setSelectedImage}) => {
       </label>
       
       <input id="file-upload" type="file" accept="image/*" onChange={handleImageUpload} />
-      <img src={selectedImage ?? Noimage} alt="Selected" />
+      <img className='image' src={selectedImage ?? Noimage} alt="Selected" />
     </div>
   );
 };

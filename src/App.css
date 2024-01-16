@@ -28,9 +28,14 @@ input[type="file"] {
 p{
   padding: 15px;
 }
-img{
+.image{
   height: 543px;
   width: 604px;
+  object-fit: fill;
+}
+.Spinner{
+  height: 54px;
+  width: 60px;
   object-fit: fill;
 }
 .textDiv{

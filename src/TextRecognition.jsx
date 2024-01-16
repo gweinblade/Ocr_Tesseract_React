@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Tesseract from 'tesseract.js';
+import Spinner from "./assets/Spinner.svg"
 
 const TextRecognition = ({ selectedImage }) => {
   const [recognizedText, setRecognizedText] = useState('');
+  const [loadingSpinner, setLoadingSpinner] = useState(false);
   useEffect(() => {
+    setLoadingSpinner(true);
     const recognizeText = async () => {
       if (selectedImage) {
         const result = await Tesseract.recognize(selectedImage);
@@ -11,11 +14,13 @@ const TextRecognition = ({ selectedImage }) => {
       }
     };
     recognizeText();
+    setLoadingSpinner(false);
   }, [selectedImage]);
   return (
     <div className='textDiv'>
       <h2>Recognized Text:</h2>
-      <p>{recognizedText}</p>
+      
+      { loadingSpinner ? <img className="Spinner" src={Spinner} /> :<p>{recognizedText}</p>}
     </div>
   );
 };
