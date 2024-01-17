@@ -24,15 +24,16 @@ input[type="file"] {
   flex-direction: column;
   height: 100%;
   justify-content: space-around;
+  .image{
+    height: 543px;
+    width: 604px;
+    object-fit: fill;
+  }
 }
 p{
   padding: 15px;
 }
-.image{
-  height: 543px;
-  width: 604px;
-  object-fit: fill;
-}
+
 .Spinner{
   height: 54px;
   width: 60px;
